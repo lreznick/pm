@@ -18,6 +18,7 @@
 <!ENTITY papermachines.collectionmenu.ngrams_specific		"Specific N-grams...">
 
 <!ENTITY papermachines.collectionmenu.phrasenet				"Phrase Net">
+<!ENTITY papermachines.collectionmenu.phrasenet_time		"Phrase Net">
 
 <!ENTITY papermachines.collectionmenu.geoparser				"Mapping">
 <!ENTITY papermachines.collectionmenu.geoparser_flightpaths	"Flight Paths">

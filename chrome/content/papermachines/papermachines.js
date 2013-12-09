@@ -32,6 +32,10 @@ Zotero.PaperMachines = {
 				{"name": "Dunning's log-likelihood", "label": " ", "value": "dunning"},
 				{"name": "Mann-Whitney U", "label": " ", "value": "mww"},
 	],
+	phrasenetFilters: [{"name": "none (raw frequency)", "label": " ", "value": "plain", "default": true},
+				{"name": "Dunning's log-likelihood", "label": " ", "value": "dunning"},
+				{"name": "Mann-Whitney U", "label": " ", "value": "mww"},
+	],
 	processesThatPrompt: {
 		"mallet_classify-file": function () {
 			// get list of classifiers
@@ -54,6 +58,17 @@ Zotero.PaperMachines = {
 			} else {
 				return false;
 			}
+		},
+		"phrasenet": function () {
+			var filter = Zotero.PaperMachines.selectFromOptions("phrasenet", Zotero.PaperMachines.phrasenetFilters);
+			if (!filter) return false;
+			return filter;
+			/*var params = Zotero.PaperMachines.promptForProcessParams("phrasenet_time");
+			if (params) {
+				return filter.concat(["json", JSON.stringify(params)]);
+			} else {
+				return false;
+			}*/
 		},
 		"wordcloud_translate": function () {
 			var params = Zotero.PaperMachines.promptForProcessParams("wordcloud_translate");
