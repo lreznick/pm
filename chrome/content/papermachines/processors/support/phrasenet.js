@@ -206,7 +206,6 @@ function getData(d, accessor, f){
     var ti = getorInsertNode(nodes, target, weight);
     edges.push({'source': si, 'target': ti, 'weight': weight, 'id': edge});
   }
-
 }
 
 function updatePhrases(d, a, f){
@@ -241,7 +240,7 @@ function updatePhrases(d, a, f){
       .attr("id", function (d, i) { return "node" + d.name;})
       .text(function(d) { return d.name; });
 
-  node.exit().transition(3000).style("color", "red").remove();
+  node.exit().transition(1000).delay(500).style("color", "red").remove();
 
   var link = svg.selectAll(".link")
       .data(edges, function(d){d.id});
